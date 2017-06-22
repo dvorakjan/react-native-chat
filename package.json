@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "appetize-build": "cd ios && xcodebuild -sdk iphonesimulator -scheme angitu-release -derivedDataPath build/ && tar -czf ../deploy/angitu-ios-release-simulator.tar.gz build/Build/Products/Release-iphonesimulator/*.app",
+    "prettify": " prettier src/* --write --no-semi --single-quote",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
