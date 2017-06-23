@@ -20,7 +20,8 @@ const Text = styled.Text`
 `
 
 const ResponsesView = styled.View`
-  height: 60px;
+  height: 75px;
+  paddingTop: 15px;
 `
 
 const ResponsesScroll = styled.ScrollView`

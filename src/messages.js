@@ -33,7 +33,7 @@ export const MessagesList = styled.ScrollView`
 `
 
 const MessageView = styled.View`
-  margin: 10px;
+  margin: 10px 5px 10px 5px;
   flex: 1;
   flex-direction: row;
   border-radius: 10px;

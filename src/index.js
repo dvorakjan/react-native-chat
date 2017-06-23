@@ -19,6 +19,13 @@ export default class angitu extends Component {
         }
       ])
     })
+
+    // scroll when message rendered - should be solved better using lifecycle methods
+    setTimeout(_ => {
+      if (this.refs._messagesView)
+        this.refs._messagesView.root.scrollToEnd({ animated: true })
+    }, 100)
+
     if (type === 'outgoing') {
       setTimeout(_ => this.addMessage('This is dummy reply.', 'incoming'), 1000)
     }
@@ -32,7 +39,7 @@ export default class angitu extends Component {
             title: 'React Native chat demo'
           }}
         />
-        <MessagesList>
+        <MessagesList ref="_messagesView">
           <IncomingMessage>
             Hello!
           </IncomingMessage>
@@ -41,6 +48,12 @@ export default class angitu extends Component {
           </IncomingMessage>
           <OutgoingMessage>
             John Appleseed.
+          </OutgoingMessage>
+          <IncomingMessage>
+            Hi John. Where are you from?
+          </IncomingMessage>
+          <OutgoingMessage>
+            Pardubice.
           </OutgoingMessage>
           <IncomingMessage>
             How are you?
